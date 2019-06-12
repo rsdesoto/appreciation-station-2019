@@ -47,4 +47,22 @@ describe("ThankYouCard", () => {
       expect(subject).toMatchSnapshot();
     });
   });
+
+  describe("#setCanvasSize", () => {
+    it("updates the canvas width and height", () => {
+      // arrange part, act part, assert part
+      // arrange: setting up pre-conditions before you test
+      let canvas = {};
+      const width = 200;
+      const height = 100;
+
+      // act: call the unit you're testing
+      // .instance() - comes with enzyme - puts a wrapper around your react component so you can use this.functions
+      subject.instance().setCanvasSize(canvas, width, height);
+
+      // assert: what you expect to have happen
+      expect(canvas.width).toEqual(width);
+      expect(canvas.height).toEqual(height);
+    })
+  })
 });
